@@ -52,6 +52,10 @@ foreach( array_keys( $smsc_shortcodes ) as $shortcode )
             $link = $smsc_shortcodes[$shortcode][1];
      
             if ( empty($text) ) $text = "$name ($service)";
-     
-    return "<a href=\"$link/$name\" title=\"$name's $service profile\">$text</a>";
+            
+     		if( empty($name) ) {
+     		return "You forgot a username for the website";
+     		} else {
+     		return "<a href=\"$link/$name\" title=\"$name's $service profile\">$text</a>";
+     		}
     }
